@@ -2,21 +2,42 @@
   "name": "nextjs-reference-template",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.17.1",
+    "npm": "9.6.7",
+    "yarn": "yarnではなくnpmを使用してください"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --dir src",
+    "lint:fix": "npm run lint --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "preinstall": "npx only-allow npm"
   },
   "dependencies": {
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "eslint": "8.48.0",
-    "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-typescript-sort-keys": "^3.0.0",
+    "prettier": "^3.0.3"
+  },
+  "volta": {
+    "node": "18.17.1",
+    "npm": "9.6.7"
   }
 }
